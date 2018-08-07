@@ -5,7 +5,7 @@
 
   <div class="field">
     <%= f.label :username %><br />
-    <%= f.email_field :anonymous_username, autofocus: true %>
+    <%= f.text_field :anonymous_username, autofocus: true %>
   </div>
 
   <div class="field">
@@ -24,6 +24,11 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sign_up_code %><br />
+    <%= f.text_field :sign_up_code %>
   </div>
 
   <div class="actions">
