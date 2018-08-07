@@ -1,10 +1,13 @@
 <header>
+  <% if user_signed_in? %>
+  <% else %>
+  <% end %>
 </header>
 <content>
-<% @gossips.each do |u| %>
-  <p>
-    <%= u.title %> <br>
-    <%= u.content %>
-  </p>
-<% end %>
+  <% @gossips.each do |u| %>
+    <p>
+      <%= u.title %> <br>
+      <%= u.content %>
+    </p>
+  <% end %>
 </content>
