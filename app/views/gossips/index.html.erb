@@ -7,6 +7,7 @@
   <% end %>
 </header>
 <content>
+<<<<<<< HEAD
   <% @gossips.each do |u| %>
     <p>
       <%= u.title %> <br>
@@ -15,5 +16,40 @@
       <%= u.datetime%>
       <%= link_to 'Delete this gossip', gossips_delete_path, method: :destroy %>
     </p>
+=======
+  <h1>Voici la liste des Gossips</h1>
+
+<div class="container">
+  <table >
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Gossip Id</th>
+    <th>User Name</th>
+    <th>Action</th>
+    <th>Visualiser</th>
+
+  </tr>
+  </table>
+  <% @gossips.each do |gossip| %>
+  <table >
+    <tr>
+      <td><%= gossip.title %></td>
+      <td><%= gossip.content %></td>
+      <td><%= gossip.id %></td>
+      <td><%= User.find(gossip.user_id).anonymous_username %></td>
+      </td>
+      <td><%= link_to 'Supprimer', gossip, method: :delete %></td>
+      <td><%= link_to 'Visualiser', gossip_path(gossip) %></td>
+    </tr>
+
+  </table>
+>>>>>>> roro
   <% end %>
+</div>
+
+
+<div class='container'>
+  <a href="<%= new_gossip_path %>" class= 'btn btn-warning'>Créer un nouveau gossip</a>
+</div>
 </content>
