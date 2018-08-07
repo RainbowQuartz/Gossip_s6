@@ -33,9 +33,14 @@ class GossipsController < ApplicationController
   end
 
   def destroy
-    @gossip = Gossip.find(params[:id])
-    @gossip.destroy
-    redirect_to gossips_index_path
+    if current_user.id == Gossip.find(:id).user_id
+      @gossip = Gossip.find(params[:id])
+      @gossip.destroy
+      redirect_to gossips_index_path
+    else
+      redirect_to gossips_index_path
+      flash[:alert] = "You cannot delete gossips that aren't your own"
+    end
   end
 
   private

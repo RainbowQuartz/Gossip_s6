@@ -13,6 +13,7 @@
       <%= u.content %>
       <%= User.find(u.user_id).anonymous_username%>
       <%= u.datetime%>
+      <%= link_to 'Delete this gossip', gossips_delete_path, method: :destroy %>
     </p>
   <% end %>
 </content>
