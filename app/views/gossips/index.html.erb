@@ -7,16 +7,6 @@
   <% end %>
 </header>
 <content>
-<<<<<<< HEAD
-  <% @gossips.each do |u| %>
-    <p>
-      <%= u.title %> <br>
-      <%= u.content %>
-      <%= User.find(u.user_id).anonymous_username%>
-      <%= u.datetime%>
-      <%= link_to 'Delete this gossip', gossips_delete_path, method: :destroy %>
-    </p>
-=======
   <h1>Voici la liste des Gossips</h1>
 
 <div class="container">
@@ -44,7 +34,6 @@
     </tr>
 
   </table>
->>>>>>> roro
   <% end %>
 </div>
 

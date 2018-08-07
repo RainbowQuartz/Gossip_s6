@@ -6,12 +6,9 @@ Rails.application.routes.draw do
   resources :gossips
   get 'gossips/new', to: 'gossips#new'
   post 'gossips/new', to: 'gossips#create'
-<<<<<<< HEAD
   delete 'gossips/delete/:id', to: 'gossips#destroy'
-=======
   get 'gossips/new', to: 'gossips#show'
   delete 'gossips/delete', to: 'gossips#destroy'
->>>>>>> roro
   get 'gossips/edit/:id', to: 'gossips#edit'
   post 'gossips/edit/:id', to: 'gossips#update'
 

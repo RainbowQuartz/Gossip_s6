@@ -38,16 +38,6 @@ class GossipsController < ApplicationController
   end
 
   def destroy
-<<<<<<< HEAD
-    if current_user.id == Gossip.find(:id).user_id
-      @gossip = Gossip.find(params[:id])
-      @gossip.destroy
-      redirect_to gossips_index_path
-    else
-      redirect_to gossips_index_path
-      flash[:alert] = "You cannot delete gossips that aren't your own"
-    end
-=======
     @gossip = Gossip.find(params[:id])
     unless @gossip.user_id == current_user.id
       flash[:alert] = "You are not the creator of this gssip, therefore you're not permitted to edit or destroy this gossip"
@@ -56,7 +46,6 @@ class GossipsController < ApplicationController
     end
     @gossip.destroy
     redirect_to gossips_index_path
->>>>>>> roro
   end
 
   private
