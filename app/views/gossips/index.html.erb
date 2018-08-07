@@ -11,6 +11,8 @@
     <p>
       <%= u.title %> <br>
       <%= u.content %>
+      <%= User.find(u.user_id).anonymous_username%>
+      <%= u.datetime%>
     </p>
   <% end %>
 </content>
